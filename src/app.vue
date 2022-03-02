@@ -7,7 +7,7 @@
             Click to drink</el-button
           >
         </div>
-        <div>{{ alcohol }}</div>
+        <el-tag class="ml-2" type="success">{{ alcohol }}</el-tag>
       </el-main>
     </el-container>
   </div>
@@ -15,6 +15,7 @@
 
 <script>
 import axios from 'axios';
+import { ElMessage } from 'element-plus'
 
 export default {
   data() {
@@ -31,6 +32,10 @@ export default {
       }).then((res) => {
         console.log(res);
         this.alcohol = res.data;
+        ElMessage({
+          message: `今天喝${this.alcohol}`,
+          type: 'success',
+        })
       })
     },
   },
