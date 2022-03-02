@@ -1,3 +1,6 @@
 import App from './app.vue';
 
-Vue.createApp(App).mount('#app')
+const vueApp = Vue.createApp(App)
+
+vueApp.use(ElementPlus);
+vueApp.mount('#app');

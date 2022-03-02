@@ -35,7 +35,7 @@ const conf = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, './src/index.html'),
-      inject: 'body',
+      inject: true,
       minify: false,
     }),
   ],
