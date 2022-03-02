@@ -17,7 +17,7 @@ export default {
   methods: {
     handleDrink() {
       console.log('drink!');
-      alert('Beer!?!?!?!');
+      alert('Vodka!?!?!?!');
     }
   }
 }
