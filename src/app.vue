@@ -1,26 +1,37 @@
 <template>
   <div>
-    <p class="greeting">{{ greeting }}</p>
-    <div class="drink" @click="handleDrink">Click to drink</div>
-    <el-button type="primary" size="default" @click="handleDrink">Click to drink</el-button>
+    <el-container>
+      <el-main>
+        <div>
+          <el-button type="primary" size="default" @click="handleDrink">
+            Click to drink</el-button
+          >
+        </div>
+      </el-main>
+    </el-container>
   </div>
-  
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
-      greeting: 'Hello World!'
-    }
+      isLoading: false,
+    };
   },
   methods: {
     handleDrink() {
-      console.log('drink!');
-      alert('Vodka!?!?!');
-    }
-  }
-}
+      axios({
+        method: 'get',
+        url: '/drink',
+      }).then((res) => {
+        console.log(res);
+      })
+    },
+  },
+};
 </script>
 
 <style>
