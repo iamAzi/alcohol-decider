@@ -15,7 +15,6 @@
 
 <script>
 import axios from 'axios';
-import { ElMessage } from 'element-plus'
 
 export default {
   data() {
@@ -32,7 +31,7 @@ export default {
       }).then((res) => {
         console.log(res);
         this.alcohol = res.data;
-        ElMessage({
+        this.$message({
           message: `今天喝${this.alcohol}`,
           type: 'success',
         })
