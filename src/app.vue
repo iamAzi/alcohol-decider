@@ -7,6 +7,7 @@
             Click to drink</el-button
           >
         </div>
+        <div>{{ alcohol }}</div>
       </el-main>
     </el-container>
   </div>
@@ -18,6 +19,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
+      alcohol: '',
       isLoading: false,
     };
   },
@@ -28,6 +30,7 @@ export default {
         url: '/drink',
       }).then((res) => {
         console.log(res);
+        this.alcohol = res.data;
       })
     },
   },
