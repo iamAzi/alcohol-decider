@@ -11,6 +11,7 @@
           >
             Click to drink 🍺 🍷 🍸 🍹 🍾 🍶 🍼 🥂 🥃 🧋
           </el-button>
+          <br/>
           <el-tag v-if="alcohol" class="ml-2" type="success">{{
             alcohol
           }}</el-tag>
