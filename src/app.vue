@@ -13,10 +13,13 @@
           </el-button>
           <el-card v-if="alcohol" shadow="always" :body-style="{ padding: '20px' }">
             <div class="title">{{ alcohol.name }}</div>
+            <el-divider></el-divider>
             <div class="detail">
               <div class="recipe">{{ alcohol.recipe }}</div>
+              <el-divider></el-divider>
               <div class="operation">{{ alcohol.operation }}</div>
               <div class="acceesory">{{ alcohol.acceesory }}</div>
+              <el-divider></el-divider>
               <img class="img" :src="alcohol.icon" >
             </div>
           </el-card>
@@ -68,10 +71,15 @@ export default {
   }
 
   .detail {
-    max-width: 80%;
+    max-width: 100%;
+    text-align: center;
     img {
       max-width: 90%;
     }
+  }
+
+  .operation {
+    margin-bottom: 5px;
   }
 }
 
