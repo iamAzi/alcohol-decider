@@ -11,6 +11,18 @@
           >
             Click to drink 🍺 🍷 🍸 🍹 🍾 🍶 🍼 🥂 🥃 🧋
           </el-button>
+          <el-card shadow="always" :body-style="{ padding: '20px' }">
+            <div slot="header">
+              <span>{{ alcohol.name }}</span>
+            </div>
+            <div class="detail">
+              <div>{{ alcohol.recipe }}</div>
+              <div>{{ alcohol.operation }}</div>
+              <div>{{ alcohol.acceesory }}</div>
+              <img :src="alcohol.icon" >
+            </div>
+          </el-card>
+          
         </div>
       </el-main>
     </el-container>
@@ -36,7 +48,7 @@ export default {
         console.log(res);
         this.alcohol = res.data;
         this.$message({
-          message: `今天喝${this.alcohol}`,
+          message: `今天喝${this.alcohol.name}`,
           type: "success",
         });
       });
