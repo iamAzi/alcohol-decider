@@ -11,10 +11,8 @@
           >
             Click to drink 🍺 🍷 🍸 🍹 🍾 🍶 🍼 🥂 🥃 🧋
           </el-button>
-          <el-card shadow="always" :body-style="{ padding: '20px' }">
-            <div slot="header">
-              <span>{{ alcohol.name }}</span>
-            </div>
+          <el-card v-if="alcohol" shadow="always" :body-style="{ padding: '20px' }">
+            <div>{{ alcohol.name }}</div>
             <div class="detail">
               <div>{{ alcohol.recipe }}</div>
               <div>{{ alcohol.operation }}</div>
@@ -63,6 +61,13 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  .detail {
+    max-width: 80%;
+    img {
+      max-width: 90%;
+    }
+  }
 }
 
 .drink-btn {
