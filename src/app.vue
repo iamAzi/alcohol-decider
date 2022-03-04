@@ -9,7 +9,7 @@
             size="default"
             @click="handleDrink"
           >
-            Click to drink 🍺 🍷 🍸 🍹 🍾 🍶 🍼 🥂 🥃 🧋
+            今天喝什么 🍺 🍷 🍸 🍹 🍾 🍶 🍼 🥂 🥃 🧋
           </el-button>
           <el-card v-if="alcohol" shadow="always" :body-style="{ padding: '20px' }">
             <div class="title">{{ alcohol.name }}</div>
@@ -64,7 +64,7 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  background-color: #fafafa;
   .title {
     font-size: 2rem;
     text-align: center;
