@@ -48,10 +48,6 @@ export default {
       }).then((res) => {
         console.log(res);
         this.alcohol = res.data;
-        this.$message({
-          message: `今天喝${this.alcohol.name}`,
-          type: "success",
-        });
       });
     },
   },
