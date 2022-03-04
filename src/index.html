@@ -10,6 +10,37 @@
   <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" />
   <!-- 导入组件库 -->
   <script src="//unpkg.com/element-plus"></script>
+  <script>
+    function trySetHTMLFontSize() {
+      html = document.documentElement;
+      let width = html.clientWidth;
+      if(width > 750) {
+        width = 750;
+      }
+      const fontsize = width/(375/14)
+      window.pxToRem = function (value) {
+        return value/(fontsize*2) + 'rem';
+      }
+      html.style.fontSize = fontsize + 'px';
+    }
+    // https://segmentfault.com/a/1190000022754525
+    // fix:部分机型webview内rem计算不准导致页面变宽
+    function fixHTMLFontSize(){
+      var html = document.getElementsByTagName('html')[0];
+      var realFs = parseFloat(window.getComputedStyle(html).fontSize);
+      var calcuFs = parseFloat(document.documentElement.style.fontSize);
+      if(realFs !== calcuFs) {
+        var newFs = (calcuFs * calcuFs) / realFs;
+        document.documentElement.style.fontSize = newFs+'px';
+      }
+    }
+    function setHTMLFontSize(){
+      trySetHTMLFontSize()
+      fixHTMLFontSize()
+    }
+    window.addEventListener('resize', setHTMLFontSize)
+    setHTMLFontSize()
+  </script>
 </head>
 <body>
   <div id="app">Loading</div>
