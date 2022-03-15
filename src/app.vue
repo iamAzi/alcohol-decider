@@ -68,7 +68,12 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 80%;
   background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   .title {
     font-size: 2rem;
     text-align: center;
@@ -81,12 +86,10 @@ export default {
       margin-bottom: 5px;
     }
     .img-container {
-      max-width: 90%;
       max-height: 250px;
       overflow: hidden;
       img {
         max-width: 100%;
-        max-height: 100px;
         width: 100%;
       }
     }
@@ -95,7 +98,7 @@ export default {
 }
 
 .drink-btn {
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
 }
 .greeting {
   color: lightblue;
