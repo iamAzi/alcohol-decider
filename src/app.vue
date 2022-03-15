@@ -1,14 +1,6 @@
 <template>
   <div class="wrapper">
     <div class="container">
-      <el-button
-        class="drink-btn"
-        type="primary"
-        size="default"
-        @click="handleDrink"
-      >
-        今天喝什么 🥃
-      </el-button>
       <el-card v-if="alcohol" shadow="always" :body-style="{ padding: '20px' }">
         <div class="title">{{ alcohol.name }}</div>
         <el-divider></el-divider>
@@ -24,6 +16,14 @@
               :fit="cover"></el-image>
         </div>
       </el-card>
+      <el-button
+        class="drink-btn"
+        type="primary"
+        size="default"
+        @click="handleDrink"
+      >
+        今天喝什么 🥃
+      </el-button>
     </div>
   </div>
 </template>
