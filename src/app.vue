@@ -1,37 +1,30 @@
 <template>
-  <div>
-    <el-container>
-      <el-main>
-        <div class="container">
-          <el-button
-            class="drink-btn"
-            type="primary"
-            size="default"
-            @click="handleDrink"
-          >
-            今天喝什么 🥃
-          </el-button>
-          <el-card
-            v-if="alcohol"
-            shadow="always"
-            :body-style="{ padding: '20px' }"
-          >
-            <div class="title">{{ alcohol.name }}</div>
-            <el-divider></el-divider>
-            <div class="detail">
-              <div class="recipe">{{ alcohol.recipe }}</div>
-              <el-divider></el-divider>
-              <div class="operation">{{ alcohol.operation }}</div>
-              <div class="acceesory">{{ alcohol.acceesory }}</div>
-              <el-divider></el-divider>
-              <div class="img-container">
-                <img class="img" :src="alcohol.icon" />
-              </div>
-            </div>
-          </el-card>
+  <div class="wrapper">
+    <div class="container">
+      <el-button
+        class="drink-btn"
+        type="primary"
+        size="default"
+        @click="handleDrink"
+      >
+        今天喝什么 🥃
+      </el-button>
+      <el-card v-if="alcohol" shadow="always" :body-style="{ padding: '20px' }">
+        <div class="title">{{ alcohol.name }}</div>
+        <el-divider></el-divider>
+        <div class="detail">
+          <div class="recipe">{{ alcohol.recipe }}</div>
+          <el-divider></el-divider>
+          <div class="operation">{{ alcohol.operation }}</div>
+          <div class="acceesory">{{ alcohol.acceesory }}</div>
+          <el-divider></el-divider>
+          <el-image
+              style="width: 100%; height: 400px"
+              :src="alcohol.icon"
+              :fit="fit"></el-image>
         </div>
-      </el-main>
-    </el-container>
+      </el-card>
+    </div>
   </div>
 </template>
 
@@ -63,13 +56,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.wrapper {
+  background-color: #fafafa;
+}
 .container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
-  background-color: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,16 +80,7 @@ export default {
     .operation {
       margin-bottom: 5px;
     }
-    .img-container {
-      max-height: 250px;
-      overflow: hidden;
-      img {
-        max-width: 100%;
-        width: 100%;
-      }
-    }
   }
-
 }
 
 .drink-btn {
