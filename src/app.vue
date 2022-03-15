@@ -73,6 +73,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   .title {
     font-size: 2rem;
     text-align: center;
@@ -85,6 +86,10 @@ export default {
       margin-bottom: 5px;
     }
   }
+}
+
+.el-divider--horizontal {
+  margin: 10px 0;
 }
 
 .drink-btn {
