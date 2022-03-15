@@ -43,7 +43,7 @@ export default {
       axios({
         method: 'get',
         url: '/drink',
-        data: {
+        params: {
           curDrink: this.alcohol.name,
         },
       }).then((res) => {
