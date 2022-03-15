@@ -9,9 +9,13 @@
             size="default"
             @click="handleDrink"
           >
-            今天喝什么 🍺 🍷 🍸 🍹 🍾 🍶 🍼 🥂 🥃 🧋
+            今天喝什么 🥃
           </el-button>
-          <el-card v-if="alcohol" shadow="always" :body-style="{ padding: '20px' }">
+          <el-card
+            v-if="alcohol"
+            shadow="always"
+            :body-style="{ padding: '20px' }"
+          >
             <div class="title">{{ alcohol.name }}</div>
             <el-divider></el-divider>
             <div class="detail">
@@ -20,10 +24,11 @@
               <div class="operation">{{ alcohol.operation }}</div>
               <div class="acceesory">{{ alcohol.acceesory }}</div>
               <el-divider></el-divider>
-              <img class="img" :src="alcohol.icon" >
+              <div class="img-container">
+                <img class="img" :src="alcohol.icon" />
+              </div>
             </div>
           </el-card>
-          
         </div>
       </el-main>
     </el-container>
@@ -31,20 +36,23 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
 
 export default {
   data() {
     return {
-      alcohol: "",
+      alcohol: '',
       isLoading: false,
     };
   },
   methods: {
     handleDrink() {
       axios({
-        method: "get",
-        url: "/drink",
+        method: 'get',
+        url: '/drink',
+        data: {
+          curDrink: this.alcohol.name,
+        },
       }).then((res) => {
         console.log(res);
         this.alcohol = res.data;
@@ -69,14 +77,21 @@ export default {
   .detail {
     max-width: 100%;
     text-align: center;
-    img {
+    .operation {
+      margin-bottom: 5px;
+    }
+    .img-container {
       max-width: 90%;
+      max-height: 250px;
+      overflow: hidden;
+      img {
+        max-width: 100%;
+        max-height: 100px;
+        width: 100%;
+      }
     }
   }
 
-  .operation {
-    margin-bottom: 5px;
-  }
 }
 
 .drink-btn {
