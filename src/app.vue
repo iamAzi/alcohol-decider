@@ -84,7 +84,7 @@ export default {
 }
 
 .drink-btn {
-  margin: 0 auto 10px;
+  margin: 10px auto;
 }
 .greeting {
   color: lightblue;
