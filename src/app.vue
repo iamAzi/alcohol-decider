@@ -13,7 +13,11 @@
           <el-image
               style="width: 100%; max-height: 400px"
               :src="alcohol.icon"
-              :fit="cover"></el-image>
+              :fit="cover">
+              <div slot="placeholder" class="image-slot">
+                <i class="el-icon-picture-outline"></i>
+              </div>
+          </el-image>
         </div>
       </el-card>
       <el-button
