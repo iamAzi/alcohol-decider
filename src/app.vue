@@ -11,7 +11,7 @@
           <div class="acceesory">{{ alcohol.acceesory }}</div>
           <el-divider></el-divider>
           <el-image
-              style="width: 100%; max-height: 400px"
+              style="width: 100%; max-height: 300px"
               :src="alcohol.icon"
               :fit="cover">
               <div slot="placeholder" class="image-slot">
